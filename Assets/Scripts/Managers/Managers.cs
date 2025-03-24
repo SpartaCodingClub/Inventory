@@ -1,18 +1,18 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class Managers : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    public static Managers Instance { get; private set; }
 
-    // Update is called once per frame
-    void Update()
+    public static readonly GameManager Game = new();
+    public static readonly UIManager UI = new();
+
+    private void Awake()
     {
-        
+        Instance = this;
+        DontDestroyOnLoad(this);
+
+        Game.Initialize();
+        UI.Initialize();
     }
 }

@@ -1,18 +1,50 @@
-using System.Collections;
+using DG.Tweening;
+using System;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Utility : MonoBehaviour
+public class Utility
 {
-    // Start is called before the first frame update
-    void Start()
+    public static T FindComponent<T>(GameObject gameObject, string name) where T : Component
     {
-        
+        var components = gameObject.GetComponentsInChildren<T>(true);
+        foreach (var component in components)
+        {
+            if (component.name.Equals(name))
+            {
+                return component;
+            }
+        }
+
+        Debug.LogWarning($"Failed to FindComponent<{typeof(T).Name}>({gameObject.name}, {name})");
+        return null;
     }
 
-    // Update is called once per frame
-    void Update()
+    public static Component[] FindComponents(GameObject gameObject, Type enumType)
     {
-        
+        List<Component> components = null;
+
+        var names = Enum.GetNames(enumType);
+        var children = gameObject.GetComponentsInChildren<Transform>(true);
+
+        foreach (var name in names)
+        {
+            foreach (var child in children)
+            {
+                if (child.name != name)
+                {
+                    continue;
+                }
+
+                components.Add(child);
+            }
+        }
+
+        return components.ToArray();
+    }
+
+    public static Sequence RecyclableSequence()
+    {
+        return DOTween.Sequence().Pause().SetAutoKill(false);
     }
 }

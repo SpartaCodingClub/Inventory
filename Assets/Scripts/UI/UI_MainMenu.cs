@@ -1,18 +1,14 @@
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-
-public class UI_MainMenu : MonoBehaviour
+public class UI_MainMenu : UI_Base
 {
-    // Start is called before the first frame update
-    void Start()
+    private enum Children
     {
-        
+        Button_Status,
+        Button_Inventory
     }
 
-    // Update is called once per frame
-    void Update()
+    protected override void Initialize()
     {
-        
+        base.Initialize();
+        BindChildren(typeof(Children));
     }
 }

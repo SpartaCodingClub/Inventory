@@ -1,18 +1,12 @@
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-
-public class Define : MonoBehaviour
+public enum State
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    Destroyed,
+    Birth,
+    Stand,
+    Death
+}
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+public class Define
+{
+
 }

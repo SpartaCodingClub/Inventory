@@ -1,18 +1,14 @@
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-
-public class UI_Inventory : MonoBehaviour
+public class UI_Inventory : UI_Base
 {
-    // Start is called before the first frame update
-    void Start()
+    private enum Children
     {
-        
+        Content,
+        Button_Back
     }
 
-    // Update is called once per frame
-    void Update()
+    protected override void Initialize()
     {
-        
+        base.Initialize();
+        BindChildren(typeof(Children));
     }
 }

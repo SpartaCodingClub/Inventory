@@ -1,18 +1,18 @@
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-
-public class UI_Status : MonoBehaviour
+public class UI_Status : UI_Base
 {
-    // Start is called before the first frame update
-    void Start()
+    private enum Children
     {
-        
+        Status,
+        Text_Attack,
+        Text_Defense,
+        Text_Health,
+        Text_Critical,
+        Button_Back
     }
 
-    // Update is called once per frame
-    void Update()
+    protected override void Initialize()
     {
-        
+        base.Initialize();
+        BindChildren(typeof(Children));
     }
 }

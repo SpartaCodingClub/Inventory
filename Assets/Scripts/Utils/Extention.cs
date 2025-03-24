@@ -1,18 +1,15 @@
-using System.Collections;
-using System.Collections.Generic;
+using System;
 using UnityEngine;
 
-public class Extention : MonoBehaviour
+public static class Extention
 {
-    // Start is called before the first frame update
-    void Start()
+    public static T FindComponent<T>(this GameObject gameObject, string name) where T : Component
     {
-        
+        return Utility.FindComponent<T>(gameObject, name);
     }
 
-    // Update is called once per frame
-    void Update()
+    public static Component[] FindComponents(this GameObject gameObject, Type enumType)
     {
-        
+        return Utility.FindComponents(gameObject, enumType);
     }
 }

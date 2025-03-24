@@ -365,6 +365,7 @@ GameObject:
   - component: {fileID: 1301129330}
   - component: {fileID: 1301129327}
   - component: {fileID: 1301129326}
+  - component: {fileID: 1301129331}
   m_Layer: 5
   m_Name: UI_Inventory
   m_TagString: Untagged
@@ -467,6 +468,18 @@ CanvasGroup:
   m_Interactable: 0
   m_BlocksRaycasts: 0
   m_IgnoreParentGroups: 0
+--- !u!114 &1301129331
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1301129325}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0e169175b411ff4478cc02a0db3e50f4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1437156083
 GameObject:
   m_ObjectHideFlags: 0
@@ -480,6 +493,7 @@ GameObject:
   - component: {fileID: 1437156088}
   - component: {fileID: 1437156085}
   - component: {fileID: 1437156084}
+  - component: {fileID: 1437156089}
   m_Layer: 5
   m_Name: UI_Status
   m_TagString: Untagged
@@ -582,6 +596,18 @@ CanvasGroup:
   m_Interactable: 0
   m_BlocksRaycasts: 0
   m_IgnoreParentGroups: 0
+--- !u!114 &1437156089
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1437156083}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: addebc63b325b9d41a0f7c40973371e1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1718461668
 GameObject:
   m_ObjectHideFlags: 0
@@ -595,6 +621,7 @@ GameObject:
   - component: {fileID: 1718461673}
   - component: {fileID: 1718461670}
   - component: {fileID: 1718461669}
+  - component: {fileID: 1718461674}
   m_Layer: 5
   m_Name: UI_MainMenu
   m_TagString: Untagged
@@ -701,6 +728,18 @@ CanvasGroup:
   m_Interactable: 0
   m_BlocksRaycasts: 0
   m_IgnoreParentGroups: 0
+--- !u!114 &1718461674
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1718461668}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 17ff86828ed0afd4d94c5a0c4a836db6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1744920077
 GameObject:
   m_ObjectHideFlags: 0
@@ -1561,7 +1600,7 @@ GameObject:
   - component: {fileID: 4337779847672213425}
   - component: {fileID: 6945217720175363430}
   m_Layer: 0
-  m_Name: Text_Value
+  m_Name: Text_Health
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2431,7 +2470,7 @@ GameObject:
   - component: {fileID: 3311965376473603233}
   - component: {fileID: 5198622492686815693}
   m_Layer: 0
-  m_Name: Text_Value
+  m_Name: Text_Critical
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2885,7 +2924,7 @@ GameObject:
   - component: {fileID: 3740122611754305754}
   - component: {fileID: 1499082529510741075}
   m_Layer: 0
-  m_Name: Text_Value
+  m_Name: Text_Defense
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5134,7 +5173,7 @@ GameObject:
   - component: {fileID: 5545776803940558463}
   - component: {fileID: 5474394496806060491}
   m_Layer: 0
-  m_Name: Text_Value
+  m_Name: Text_Attack
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
