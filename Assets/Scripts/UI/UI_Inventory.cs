@@ -10,5 +10,7 @@ public class UI_Inventory : UI_Base
     {
         base.Initialize();
         BindChildren(typeof(Children));
+
+
     }
 }
