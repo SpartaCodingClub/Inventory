@@ -17,6 +17,11 @@ MonoBehaviour:
     - 7b96b3b576492584294cdf8108a2f075
     - 6b120faf6cb0b964f96dc9697abf5db4
     - 8c6d8d01bf47d4d4e9ef0e7607314530
+    - 59b189d496796b942abefa2021f69b0c
+    - 972a7c923d2120a40b74a93d7d0c0628
+    - 15f8624602f91e2449f8cb063739b0a7
+    - 600c0deff0599ce4cb487ddf92edf2aa
+    - e9f693669af91aa45ad615fc681ed29f
     values:
     - iconNameOrGuid: 
       colorIndex: 8
@@ -30,4 +35,24 @@ MonoBehaviour:
       colorIndex: 2
       isIconRecursive: 0
       isColorRecursive: 1
+    - iconNameOrGuid: Font Icon
+      colorIndex: 0
+      isIconRecursive: 0
+      isColorRecursive: 0
+    - iconNameOrGuid: AssemblyDefinitionAsset Icon
+      colorIndex: 0
+      isIconRecursive: 0
+      isColorRecursive: 0
+    - iconNameOrGuid: 
+      colorIndex: 7
+      isIconRecursive: 0
+      isColorRecursive: 1
+    - iconNameOrGuid: SceneAsset Icon
+      colorIndex: 0
+      isIconRecursive: 0
+      isColorRecursive: 0
+    - iconNameOrGuid: Shader Icon
+      colorIndex: 0
+      isIconRecursive: 0
+      isColorRecursive: 0
   bookmarks: []
