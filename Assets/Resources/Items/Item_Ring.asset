@@ -10,8 +10,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5a03c4d71a1a39b499b71c421619ca1a, type: 3}
-  m_Name: Item
+  m_Name: Item_Ring
   m_EditorClassIdentifier: 
-  Type: 0
-  Icon: {fileID: 0}
-  Value: 0
+  Type: 2
+  Icon: {fileID: 21300000, guid: a6e0efd76193e4281839a3d745703310, type: 3}
+  Value: 15

@@ -1,3 +1,5 @@
+using UnityEngine.UI;
+
 public class UI_InventorySlot : UI_Base
 {
     private enum Children
@@ -5,6 +7,10 @@ public class UI_InventorySlot : UI_Base
         Icon,
         Equipment
     }
+
+    public bool IsEmpty { get; private set; } = true;
+
+    private ItemData itemData;
 
     protected override void Initialize()
     {
@@ -14,11 +20,15 @@ public class UI_InventorySlot : UI_Base
 
     public void RefreshUI()
     {
+        Get<Image>((int)Children.Icon).sprite = itemData.Icon;
+        IsEmpty = false;
 
+        Managers.UI.Inventory.RefreshUI();
     }
 
-    public void SetItem()
+    public void SetItem(ItemData itemData)
     {
-
+        this.itemData = itemData;
+        RefreshUI();
     }
 }

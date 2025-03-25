@@ -1,5 +1,6 @@
 using DG.Tweening;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -33,6 +34,7 @@ public class UI_Inventory : UI_Base
     private enum Children
     {
         Inventory,
+        Text_Value,
         Content,
         Button_Back
     }
@@ -52,11 +54,14 @@ public class UI_Inventory : UI_Base
         var content = Get((int)Children.Content);
         for (int i = 0; i < Define.INVENTORY_COUNT; i++)
         {
-            var slotPrefab = Resources.Load<GameObject>(nameof(UI_InventorySlot));
+            string path = $"{Define.PATH_UI}/{nameof(UI_InventorySlot)}";
+            var slotPrefab = Resources.Load<GameObject>(path);
             var slotObject = Instantiate(slotPrefab, content);
             var slot = slotObject.GetComponent<UI_InventorySlot>();
             slots.Add(slot);
         }
+
+        Get<TMP_Text>((int)Children.Text_Value).text = $"0 <#c5c8d0>/ {Define.INVENTORY_COUNT}";
     }
 
     public void RefreshUI()
