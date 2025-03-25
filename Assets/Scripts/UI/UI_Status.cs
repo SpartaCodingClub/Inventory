@@ -1,4 +1,6 @@
 using DG.Tweening;
+using TMPro;
+using UnityEngine.UI;
 
 public class UI_Status : UI_Base
 {
@@ -16,7 +18,14 @@ public class UI_Status : UI_Base
         var child = Get((int)Children.Status);
 
         return DOTween.Sequence()
-            .Append(child.DOAnchorPosX(666.5551f, 0.5f).SetEase(Ease.InBack));
+            .Append(child.DOAnchorPosX(666.5551f, 0.3f));
+    }
+    #endregion
+    #region Events
+    private void Button_Back()
+    {
+        Death();
+        Managers.UI.MainMenu.Birth();
     }
     #endregion
 
@@ -37,5 +46,15 @@ public class UI_Status : UI_Base
 
         BindSequences(State.Birth, Status_Birth);
         BindSequences(State.Death, Status_Death);
+
+        Get<Button>((int)Children.Button_Back).onClick.AddListener(Button_Back);
+    }
+
+    public void RefreshUI(Character player)
+    {
+        Get<TMP_Text>((int)Children.Text_Attack).text = player.Attack.ToString();
+        Get<TMP_Text>((int)Children.Text_Defense).text = player.Defense.ToString();
+        Get<TMP_Text>((int)Children.Text_Health).text = player.Health.ToString();
+        Get<TMP_Text>((int)Children.Text_Critical).text = player.Critical.ToString();
     }
 }

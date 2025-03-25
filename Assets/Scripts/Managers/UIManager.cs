@@ -15,11 +15,7 @@ public class UIManager
         transform.SetParent(Managers.Instance.transform);
 
         MainMenu = Object.FindObjectOfType<UI_MainMenu>();
-
         Status = Object.FindObjectOfType<UI_Status>();
-        Status.gameObject.SetActive(false);
-
         Inventory = Object.FindObjectOfType<UI_Inventory>();
-        Inventory.gameObject.SetActive(false);
     }
 }

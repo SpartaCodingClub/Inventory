@@ -15,4 +15,9 @@ public class Managers : MonoBehaviour
         Game.Initialize();
         UI.Initialize();
     }
+
+    private void Start()
+    {
+        Game.GameStart();
+    }
 }

@@ -466,7 +466,7 @@ CanvasGroup:
   m_Enabled: 1
   m_Alpha: 1
   m_Interactable: 0
-  m_BlocksRaycasts: 0
+  m_BlocksRaycasts: 1
   m_IgnoreParentGroups: 0
 --- !u!114 &1301129331
 MonoBehaviour:
@@ -594,7 +594,7 @@ CanvasGroup:
   m_Enabled: 1
   m_Alpha: 1
   m_Interactable: 0
-  m_BlocksRaycasts: 0
+  m_BlocksRaycasts: 1
   m_IgnoreParentGroups: 0
 --- !u!114 &1437156089
 MonoBehaviour:
@@ -1415,7 +1415,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: TIGR
+  m_text: Name
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 141891c41714d0d43a4b5f886ef6d699, type: 2}
   m_sharedMaterial: {fileID: -6112587920097347151, guid: 141891c41714d0d43a4b5f886ef6d699, type: 2}

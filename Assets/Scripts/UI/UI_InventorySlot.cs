@@ -11,4 +11,14 @@ public class UI_InventorySlot : UI_Base
         base.Initialize();
         BindChildren(typeof(Children));
     }
+
+    public void RefreshUI()
+    {
+
+    }
+
+    public void SetItem()
+    {
+
+    }
 }

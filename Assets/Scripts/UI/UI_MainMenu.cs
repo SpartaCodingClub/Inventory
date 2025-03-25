@@ -1,4 +1,5 @@
 using DG.Tweening;
+using TMPro;
 using UnityEngine.UI;
 
 public class UI_MainMenu : UI_Base
@@ -17,7 +18,7 @@ public class UI_MainMenu : UI_Base
         var child = Get((int)Children.Right);
 
         return DOTween.Sequence()
-            .Append(child.DOAnchorPosX(400.0f, 0.5f).SetEase(Ease.InBack));
+            .Append(child.DOAnchorPosX(400.0f, 0.3f));
     }
     #endregion
     #region Events
@@ -36,6 +37,10 @@ public class UI_MainMenu : UI_Base
 
     private enum Children
     {
+        Text_Name,
+        Text_Level,
+        Slider_Level,
+        Text_Exp,
         Right,
         Button_Status,
         Button_Inventory
@@ -53,5 +58,16 @@ public class UI_MainMenu : UI_Base
         Get<Button>((int)Children.Button_Inventory).onClick.AddListener(Button_Inventory);
 
         Birth();
+    }
+
+    public void RefreshUI(Character player)
+    {
+        Get<TMP_Text>((int)Children.Text_Name).text = player.Name;
+        Get<TMP_Text>((int)Children.Text_Level).text = $"LV <#43536c><size=170%>{player.Level}";
+
+        int exp = player.Exp;
+        int maxExp = player.MaxExp;
+        Get<Slider>((int)Children.Slider_Level).value = (float)exp / maxExp;
+        Get<TMP_Text>((int)Children.Text_Exp).text = $"{exp} / {maxExp}";
     }
 }
