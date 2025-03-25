@@ -1,5 +1,6 @@
 using DG.Tweening;
 using System.Collections.Generic;
+using System.Linq;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
@@ -66,6 +67,19 @@ public class UI_Inventory : UI_Base
 
     public void RefreshUI()
     {
+        int count = slots.Count(slot => !slot.IsEmpty);
+        Get<TMP_Text>((int)Children.Text_Value).text = $"{count} <#c5c8d0>/ {Define.INVENTORY_COUNT}";
+    }
 
+    public void AddItem(ItemData item)
+    {
+        var slot = slots.First(item => item.IsEmpty);
+        if (slot == null)
+        {
+            return;
+        }
+
+        slot.SetItem(item);
+        RefreshUI();
     }
 }

@@ -1,6 +1,8 @@
+using UnityEngine;
+using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
-public class UI_InventorySlot : UI_Base
+public class UI_InventorySlot : UI_Base, IPointerClickHandler
 {
     private enum Children
     {
@@ -10,7 +12,8 @@ public class UI_InventorySlot : UI_Base
 
     public bool IsEmpty { get; private set; } = true;
 
-    private ItemData itemData;
+    private bool isEquip;
+    private ItemData item;
 
     protected override void Initialize()
     {
@@ -20,15 +23,37 @@ public class UI_InventorySlot : UI_Base
 
     public void RefreshUI()
     {
-        Get<Image>((int)Children.Icon).sprite = itemData.Icon;
-        IsEmpty = false;
+        var icon = Get<Image>((int)Children.Icon);
+        icon.sprite = item.Icon;
+        icon.gameObject.SetActive(true);
 
-        Managers.UI.Inventory.RefreshUI();
+        IsEmpty = false;
+        Get((int)Children.Equipment).gameObject.SetActive(isEquip);
     }
 
-    public void SetItem(ItemData itemData)
+    public void SetItem(ItemData item)
     {
-        this.itemData = itemData;
+        this.item = item;
+        RefreshUI();
+    }
+
+    public void OnPointerClick(PointerEventData eventData)
+    {
+        if (IsEmpty)
+        {
+            return;
+        }
+
+        if (isEquip)
+        {
+            Managers.Game.Player.Unequip(item);
+        }
+        else
+        {
+            Managers.Game.Player.Equip(item);
+        }
+
+        isEquip = !isEquip;
         RefreshUI();
     }
 }
