@@ -36,9 +36,9 @@ public abstract class UI_Base : MonoBehaviour
     protected CanvasGroup canvasGroup;
 
     private State state;
+    private List<RectTransform> children;
 
     private readonly SequenceHandler sequenceHandler = new();
-    private readonly List<RectTransform> children = new();
 
     protected RectTransform Get(int index) => children[index];
     protected T Get<T>(int index) where T : Component => Get(index).GetComponent<T>();
@@ -110,11 +110,6 @@ public abstract class UI_Base : MonoBehaviour
 
     protected void BindChildren(Type enumType)
     {
-        var names = Enum.GetNames(enumType);
-        foreach (var name in names)
-        {
-            RectTransform child = gameObject.FindComponent<RectTransform>(name);
-            children.Add(child);
-        }
+        children = gameObject.FindComponents<RectTransform>(enumType);
     }
 }

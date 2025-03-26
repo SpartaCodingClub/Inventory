@@ -1,6 +1,8 @@
 using DG.Tweening;
 using System;
 using System.Collections.Generic;
+using System.Linq;
+using System.Xml.Linq;
 using UnityEngine;
 
 public class Utility
@@ -20,27 +22,18 @@ public class Utility
         return null;
     }
 
-    public static Component[] FindComponents(GameObject gameObject, Type enumType)
+    public static List<T> FindComponents<T>(GameObject gameObject, Type enumType) where T : Component
     {
-        List<Component> components = null;
+        Dictionary<string, T> components = new();
 
-        var names = Enum.GetNames(enumType);
-        var children = gameObject.GetComponentsInChildren<Transform>(true);
-
-        foreach (var name in names)
+        var children = gameObject.GetComponentsInChildren<T>(true);
+        foreach (var child in children)
         {
-            foreach (var child in children)
-            {
-                if (child.name != name)
-                {
-                    continue;
-                }
-
-                components.Add(child);
-            }
+            components.TryAdd(child.name, child);
         }
 
-        return components.ToArray();
+        var names = Enum.GetNames(enumType);
+        return names.Where(components.ContainsKey).Select(name => components[name]).ToList();
     }
 
     public static Sequence RecyclableSequence()

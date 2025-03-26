@@ -36,7 +36,8 @@ public class UI_Status : UI_Base
         Text_Defense,
         Text_Health,
         Text_Critical,
-        Button_Back
+        Button_Back,
+        TTASDASD,
     }
 
     protected override void Initialize()
