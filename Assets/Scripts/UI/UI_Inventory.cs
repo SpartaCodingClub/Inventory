@@ -52,6 +52,7 @@ public class UI_Inventory : UI_Base
 
         Get<Button>((int)Children.Button_Back).onClick.AddListener(Button_Back);
 
+        // UISlot 동적 생성하기
         var content = Get((int)Children.Content);
         for (int i = 0; i < Define.INVENTORY_COUNT; i++)
         {

@@ -24,12 +24,14 @@ public class SequenceHandler
 
     public void Bind(State type, params Func<Sequence>[] sequences)
     {
+        // Sequence 배열은 Join으로 연결
         Sequence sequence = sequences[0]();
         for (int i = 1; i < sequences.Length; i++)
         {
             sequence.Join(sequences[i]());
         }
 
+        // Bind 재호출은 Append로 연결
         switch (type)
         {
             case State.Destroyed:
